@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <title>WEB1 - Welcome</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1><a href="index.html">WEB</a></h1>
+  <ol>
+    <li><a onclick="clickAjaxHtml()">HTML</a></li>
+    <li><a onclick="clickAjaxCss()">CSS</a></li>
+    <li><a onclick="clickAjaxJs()">JavaScript</a></li>
+  </ol>
+  <article></article>
+
+  <script>
+    const articleEl = document.querySelector('article');
+
+    const clickAjaxHtml = () => {
+      fetch('html').then(res => {
+        res.text().then(text => articleEl.innerHTML = text)
+      })
+    }
+    const clickAjaxCss = () => {
+      fetch('css').then(res => {
+        res.text().then(text => articleEl.innerHTML = text)
+      })
+    }
+    const clickAjaxJs = () => {
+      fetch('javascript').then(res => {
+        res.text().then(text => articleEl.innerHTML = text)
+      })
+    }
+  </script>
+</body>
+</html>
