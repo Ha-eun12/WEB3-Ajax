@@ -7,27 +7,17 @@
 <body>
   <h1><a href="index.html">WEB</a></h1>
   <ol>
-    <li><a onclick="clickAjaxHtml()">HTML</a></li>
-    <li><a onclick="clickAjaxCss()">CSS</a></li>
-    <li><a onclick="clickAjaxJs()">JavaScript</a></li>
+    <li><a onclick="clickAjax('html')">HTML</a></li>
+    <li><a onclick="clickAjax('css')">CSS</a></li>
+    <li><a onclick="clickAjax('javascript')">JavaScript</a></li>
   </ol>
   <article></article>
 
   <script>
     const articleEl = document.querySelector('article');
 
-    const clickAjaxHtml = () => {
-      fetch('html').then(res => {
-        res.text().then(text => articleEl.innerHTML = text)
-      })
-    }
-    const clickAjaxCss = () => {
-      fetch('css').then(res => {
-        res.text().then(text => articleEl.innerHTML = text)
-      })
-    }
-    const clickAjaxJs = () => {
-      fetch('javascript').then(res => {
+    const clickAjax = name => {
+      fetch(name).then(res => {
         res.text().then(text => articleEl.innerHTML = text)
       })
     }
