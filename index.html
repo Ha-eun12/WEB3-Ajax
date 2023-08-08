@@ -5,21 +5,30 @@
   <meta charset="utf-8">
 </head>
 <body>
-  <h1><a href="index.html">WEB</a></h1>
-  <ol>
-    <li><a onclick="clickAjax('html')">HTML</a></li>
-    <li><a onclick="clickAjax('css')">CSS</a></li>
-    <li><a onclick="clickAjax('javascript')">JavaScript</a></li>
+  <h1><a href="#!welcome">WEB</a></h1>
+  <ol id="nav">
+    
   </ol>
   <article></article>
 
   <script>
     const articleEl = document.querySelector('article');
+    const navEl = document.querySelector('#nav');
 
     const clickAjax = name => {
       fetch(name).then(res => {
         res.text().then(text => articleEl.innerHTML = text)
       })
+    }
+    
+    fetch('list').then(res => {
+      res.text().then(text => navEl.innerHTML = text)
+    })
+
+    if(location.hash) {
+      clickAjax(location.hash.substring(2))
+    }else {
+      clickAjax('welcome')
     }
   </script>
 </body>

@@ -1,1 +1,4 @@
-html,css,javascript,ajax
+<li><a href="#!html" onclick="clickAjax('html')">HTML</a></li>
+<li><a href="#!css" onclick="clickAjax('css')">CSS</a></li>
+<li><a href="#!javascript" onclick="clickAjax('javascript')">JavaScript</a></li>
+<li><a href="#!ajax" onclick="clickAjax('ajax')">Ajax</a></li>
